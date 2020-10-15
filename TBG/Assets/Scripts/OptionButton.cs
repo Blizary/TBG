@@ -7,7 +7,7 @@ public class OptionButton : MonoBehaviour
     [HideInInspector]
     public Page nextPage;
 
-    
+    private PageOption option;
 
     /// <summary>
     /// Called on button pressed
@@ -15,6 +15,13 @@ public class OptionButton : MonoBehaviour
     public void NextPage()
     {
         GameObject worldController = GameObject.FindGameObjectWithTag("GameController"); //finds the world controller
-        worldController.GetComponent<WorldManager>().UpdatePage(nextPage); //calls the update page function
+        worldController.GetComponent<WorldManager>().UpdatePage(nextPage,option); //calls the update page function
+
+
+    }
+
+    public void UpdateResources(PageOption _option)
+    {
+        option = _option;
     }
 }

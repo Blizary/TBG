@@ -12,5 +12,7 @@ public class Page : ScriptableObject
     [HideInInspector]
     public int numOfPages;
     public List<PageOption> options;
+
+ 
     //public AudioClip pageMusic;
 }

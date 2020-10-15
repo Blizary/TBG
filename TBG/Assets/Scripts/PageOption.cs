@@ -9,4 +9,8 @@ public class PageOption
     [TextArea]
     public string optionText;
     public Page nextPage;
+
+    [Header("Resources")]
+    public int healthEffects;
+    public int infoEffects;
 }

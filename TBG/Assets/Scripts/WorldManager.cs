@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WorldManager : MonoBehaviour
 {
@@ -21,15 +22,27 @@ public class WorldManager : MonoBehaviour
     public GameObject gameUIHost;
     public GameObject optionHost;
     public GameObject pageDescription;
+    public GameObject healtBar;
+    public GameObject infoBar;
+    public GameObject failScreen;
+    public GameObject successScreen;
 
     [Header("Prefabs")]
     public GameObject optionPrefab;
 
 
+    [Header("Resources")]
+    public float maxHealth;
+    public float currentHealth;
+    public float requiredInformation;
+    public float currentInformation;
+
     private int currentTextPage;
     private bool typing;
     private string newText;
     private AudioSource typewriteSource;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +53,14 @@ public class WorldManager : MonoBehaviour
         personMainText.GetComponent<TextMeshProUGUI>().text = startPerson.description;
         personInfoText.GetComponent<TextMeshProUGUI>().text = startPerson.personInfo;
         interrogationInfo.GetComponent<TextMeshProUGUI>().text = startPerson.information;
+
+        //start
         currentPage = startPerson.startPage;
+        currentHealth = maxHealth;
+        currentInformation = 0;
+        healtBar.GetComponent<Image>().fillAmount = 1;
+        infoBar.GetComponent<Image>().fillAmount = 0;
+
         //Add img when available
     }
 
@@ -78,10 +98,62 @@ public class WorldManager : MonoBehaviour
     /// Updates the current page and runs the read page function
     /// Called outside
     /// </summary>
-    public void UpdatePage(Page _newPage)
+    public void UpdatePage(Page _newPage,PageOption _option)
     {
         currentPage = _newPage;
+        ReadResources(_option);
         ReadPage();
+
+    }
+
+    void ReadResources(PageOption _option)
+    {
+        
+        //Health
+        if(_option.healthEffects!=0)
+        {
+            float health = currentHealth + _option.healthEffects;
+            if(health> maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            else if( health <0)
+            {
+                //TRIGGER DEATH 
+                currentHealth = 0;
+            }
+            else
+            {
+                currentHealth = health;
+            }
+
+            healtBar.GetComponent<Image>().fillAmount = currentHealth/maxHealth ;
+            Debug.Log(currentHealth / maxHealth);
+        }
+
+        //Information
+        if (_option.infoEffects != 0)
+        {
+            float info = currentInformation + _option.infoEffects;
+
+            if(info > requiredInformation)
+            {
+                //TRIGGER WIN 
+                info = requiredInformation;
+            }
+            else if( info<0)
+            {
+                currentInformation = 0;
+            }
+            else
+            {
+                currentInformation = info;
+            }
+
+            infoBar.GetComponent<Image>().fillAmount = currentInformation/requiredInformation;
+        }
+        
+
 
     }
 
@@ -156,6 +228,7 @@ public class WorldManager : MonoBehaviour
                 GameObject newOption = Instantiate(optionPrefab, optionHost.transform);
                 newOption.GetComponent<OptionButton>().nextPage = currentPage.options[i].nextPage;
                 newOption.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentPage.options[i].optionText;
+                newOption.GetComponent<OptionButton>().UpdateResources(currentPage.options[i]);
 
             }
         }
