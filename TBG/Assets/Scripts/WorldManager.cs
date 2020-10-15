@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class WorldManager : MonoBehaviour
     {
         gameUIHost.SetActive(false);
         startInfo.SetActive(true);
+        failScreen.SetActive(false);
+        successScreen.SetActive(false);
 
         personMainText.GetComponent<TextMeshProUGUI>().text = startPerson.description;
         personInfoText.GetComponent<TextMeshProUGUI>().text = startPerson.personInfo;
@@ -60,6 +63,7 @@ public class WorldManager : MonoBehaviour
         currentInformation = 0;
         healtBar.GetComponent<Image>().fillAmount = 1;
         infoBar.GetComponent<Image>().fillAmount = 0;
+
 
         //Add img when available
     }
@@ -116,19 +120,22 @@ public class WorldManager : MonoBehaviour
             if(health> maxHealth)
             {
                 currentHealth = maxHealth;
+                healtBar.GetComponent<Image>().fillAmount =1;
             }
-            else if( health <0)
+            else if( health <=0)
             {
                 //TRIGGER DEATH 
                 currentHealth = 0;
+                healtBar.GetComponent<Image>().fillAmount = 0;
+                failScreen.SetActive(true);
             }
             else
             {
                 currentHealth = health;
+                healtBar.GetComponent<Image>().fillAmount = currentHealth / maxHealth;
             }
 
-            healtBar.GetComponent<Image>().fillAmount = currentHealth/maxHealth ;
-            Debug.Log(currentHealth / maxHealth);
+            
         }
 
         //Information
@@ -136,21 +143,25 @@ public class WorldManager : MonoBehaviour
         {
             float info = currentInformation + _option.infoEffects;
 
-            if(info > requiredInformation)
+            if(info >= requiredInformation)
             {
                 //TRIGGER WIN 
                 info = requiredInformation;
+                infoBar.GetComponent<Image>().fillAmount = 1;
+                successScreen.SetActive(true);
             }
             else if( info<0)
             {
                 currentInformation = 0;
+                infoBar.GetComponent<Image>().fillAmount = 0;
             }
             else
             {
                 currentInformation = info;
+                infoBar.GetComponent<Image>().fillAmount = currentInformation / requiredInformation;
             }
 
-            infoBar.GetComponent<Image>().fillAmount = currentInformation/requiredInformation;
+            
         }
         
 
@@ -268,4 +279,15 @@ public class WorldManager : MonoBehaviour
         gameUIHost.SetActive(true);
         
     }
+
+    public void LoseButton()
+    {
+        SceneManager.LoadScene("Interrogation");
+    }
+
+    public void WinButton()
+    {
+        SceneManager.LoadScene("Interrogation");
+    }
+
 }
