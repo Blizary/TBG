@@ -5,12 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum Environment
+{
+    Environment1,
+    Environment2,
+    Environment3
+}
+
 public class WorldManager : MonoBehaviour
 {
 
     public People startPerson;
     public Page currentPage;
     public float typeTextWaitTime;
+    public Environment currentEnviroment;
+    public GameObject enviromentInfo;
 
     [Header("UI person Description")]
     public GameObject startInfo;
@@ -45,9 +54,11 @@ public class WorldManager : MonoBehaviour
     
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+        currentEnviroment = Environment.Environment1;
         gameUIHost.SetActive(false);
         startInfo.SetActive(true);
         failScreen.SetActive(false);
@@ -71,7 +82,7 @@ public class WorldManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateEnviroment();
     }
 
 
@@ -275,7 +286,7 @@ public class WorldManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         startInfo.SetActive(false);
         ReadPage();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.3f);
         gameUIHost.SetActive(true);
         
     }
@@ -288,6 +299,28 @@ public class WorldManager : MonoBehaviour
     public void WinButton()
     {
         SceneManager.LoadScene("Interrogation");
+    }
+
+    public void UpdateEnviroment()
+    {
+     switch(currentEnviroment)
+        {
+            case Environment.Environment1:
+                {
+                    enviromentInfo.GetComponent<Image>().color = Color.green;
+                    break;
+                }
+            case Environment.Environment2:
+                {
+                    enviromentInfo.GetComponent<Image>().color = Color.red;
+                    break;
+                }
+            case Environment.Environment3:
+                {
+                    enviromentInfo.GetComponent<Image>().color = Color.blue;
+                    break;
+                }
+        }
     }
 
 }
