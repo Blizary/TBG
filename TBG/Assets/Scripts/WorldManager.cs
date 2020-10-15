@@ -139,7 +139,7 @@ public class WorldManager : MonoBehaviour
         StopCoroutine("TypeText");
         currentTextPage = 0;
         StartCoroutine("TypeText");
-        currentPage.numOfPages = currentPage.texts.Count;
+       
         
 
         //Clear old options
@@ -161,6 +161,7 @@ public class WorldManager : MonoBehaviour
         }
         else
         {
+            /*
             if (currentPage.ending)
             {
                 //endText.SetActive(true);
@@ -169,6 +170,7 @@ public class WorldManager : MonoBehaviour
             {
                 Debug.Log("THERE ARE NO OPTIONS FOR THIS PAGE");
             }
+            */
 
         }
 

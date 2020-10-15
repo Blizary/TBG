@@ -34,6 +34,7 @@ public class WorldController : MonoBehaviour
     private bool typing;
     private string newText;
     private AudioSource typewriteSource;
+    /*
     // Start is called before the first frame update
     void Start()
     {
@@ -242,5 +243,5 @@ public class WorldController : MonoBehaviour
         StartCoroutine("TypeText");
     }
 
-  
+  */
 }
