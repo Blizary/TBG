@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_19BEBDD5:
-        m_Texture: {fileID: 2800000, guid: 463027f6728024d449243cf187c6f371, type: 3}
+        m_Texture: {fileID: 2800000, guid: b741849238dd5b347a94d8700f6904ad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_3EC240D0:
@@ -29,11 +29,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_43D1E206:
-        m_Texture: {fileID: 2800000, guid: e5fb3a771a9ad3140a3a99704f19b8a2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 77bfed9a20d0bea468cab919df7c1c06, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_510A1BF4:
-        m_Texture: {fileID: 2800000, guid: b741849238dd5b347a94d8700f6904ad, type: 3}
+        m_Texture: {fileID: 2800000, guid: 862bc07c76daa274da0b0b948c385d80, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_C5383675:
@@ -103,7 +103,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - Color_1F8AE3CA: {r: 0.9987669, g: 0, b: 1, a: 0}
+    - Color_1F8AE3CA: {r: 0, g: 0.13017559, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
