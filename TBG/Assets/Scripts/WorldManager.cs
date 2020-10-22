@@ -47,6 +47,9 @@ public class WorldManager : MonoBehaviour
     public float requiredInformation;
     public float currentInformation;
 
+    [Header("Resources")]
+    public Material backgroundShader;
+
     private int currentTextPage;
     private bool typing;
     private string newText;
@@ -74,6 +77,7 @@ public class WorldManager : MonoBehaviour
         currentInformation = 0;
         healtBar.GetComponent<Image>().fillAmount = 1;
         infoBar.GetComponent<Image>().fillAmount = 0;
+        backgroundShader.SetColor("Color_1F8AE3CA", Color.blue); // default background with no blood
 
 
         //Add img when available
@@ -83,6 +87,7 @@ public class WorldManager : MonoBehaviour
     void Update()
     {
         UpdateEnviroment();
+        ChangeBackground();
     }
 
 
@@ -274,6 +279,14 @@ public class WorldManager : MonoBehaviour
     }
 
 
+
+    void ChangeBackground()
+    {
+        if(currentHealth<=maxHealth/2)
+        {
+            backgroundShader.SetColor("Color_1F8AE3CA", Color.magenta);
+        }
+    }
 
 
 
