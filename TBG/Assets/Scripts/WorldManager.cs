@@ -284,7 +284,7 @@ public class WorldManager : MonoBehaviour
     {
         if(currentHealth<=maxHealth/2)
         {
-            backgroundShader.SetColor("Color_1F8AE3CA", Color.magenta);
+           // backgroundShader.SetColor("Color_1F8AE3CA", Color.magenta);
         }
     }
 
@@ -320,17 +320,17 @@ public class WorldManager : MonoBehaviour
         {
             case Environment.Environment1:
                 {
-                    enviromentInfo.GetComponent<Image>().color = Color.green;
+                    backgroundShader.SetColor("Color_1F8AE3CA", Color.magenta);
                     break;
                 }
             case Environment.Environment2:
                 {
-                    enviromentInfo.GetComponent<Image>().color = Color.red;
+                    backgroundShader.SetColor("Color_1F8AE3CA", Color.blue);
                     break;
                 }
             case Environment.Environment3:
                 {
-                    enviromentInfo.GetComponent<Image>().color = Color.blue;
+                    backgroundShader.SetColor("Color_1F8AE3CA", Color.red);
                     break;
                 }
         }
