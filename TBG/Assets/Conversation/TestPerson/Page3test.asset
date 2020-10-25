@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainText: 'Your in his memory you can use one of these options.
 
-    Make him
-    feel more comfortable.
+    Make him feel
+    more comfortable.
 
-'
+    you can adjust his dream to help you again information.'
   numOfPages: 0
   options:
   - optionText: Make him suffer!
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
     healthEffects: -2
     infoEffects: 1
-  - optionText: Drug Overdose
+  - optionText: Drug overdose
     nextPage: {fileID: 11400000, guid: 2a37a10c393defe4c897c9105dc128c5, type: 2}
     healthEffects: -2
     infoEffects: 1

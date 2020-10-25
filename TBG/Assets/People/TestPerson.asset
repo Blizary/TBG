@@ -12,16 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7303f8042c2e1143a067f6c54afcc1a, type: 3}
   m_Name: TestPerson
   m_EditorClassIdentifier: 
-  personInfo: 'Mr Cole Martinez
-
-    Age:27
-
-    Weight: 168lbs
-
-    height: 168cm
-
-    Nationality:
-    American'
+  personInfo: "Mr Cole Martinez\nAge: 27 \nWeight: 168lbs\nheight: 168cm\nNationality:
+    American"
   description: In the City of Chicago, Cole Martinez is known for mass murders and
     multiple accounts of Grand theft, he is a part of The gang called Saints, you
     need to find and get information about how this gang operates in the city of
@@ -34,7 +26,7 @@ MonoBehaviour:
     to gain any information you can to gather evidence to help you along with this
     case, use the options you need.
 
-    
+
 
 '
   startPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
