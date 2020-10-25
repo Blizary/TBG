@@ -12,15 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7303f8042c2e1143a067f6c54afcc1a, type: 3}
   m_Name: TestPerson
   m_EditorClassIdentifier: 
-  personInfo: 'This is info regarding name
+  personInfo: 'Mr Cole Martinez
 
-    age
+    Age:27
 
-    and other stuff'
-  description: 'This is a general description of this person.
+    Weight: 168lbs
 
-    In the future
-    this has to be updated to store more specific information in an easier way to
-    edit'
-  information: "This is the information the player is after \nIt is a description"
+    height: 168cm
+
+    Nationality:
+    American'
+  description: In the City of Chicago, Cole Martinez is known for mass murders and
+    multiple accounts of Grand theft, he is a part of The gang called Saints, you
+    need to find and get information about how this gang operates in the city of
+    Chicago. find out when the shipments come into the harbor to stop the drug funding
+    this will help you find out the names of the gang members, good luck use any
+    force necessary to gather information.
+  information: 'The gang Saints have taken over the streets causing crimes and murdering
+    for the turf. You need to take the gang down one at a time, get to the ringleader
+    and do whatever you need to do to break this gang ring down. It is up to you
+    to gain any information you can to gather evidence to help you along with this
+    case, use the options you need.
+
+    
+
+'
   startPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}

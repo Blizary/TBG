@@ -12,24 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05126190708dca94a9fdced5f8bf705e, type: 3}
   m_Name: Page1Test
   m_EditorClassIdentifier: 
-  ending: 0
-  backgroundImage: {fileID: 0}
-  mainText: VERY DIFFERENT other other lorem ipsum stuf stuffy
-  texts: []
+  mainText: 'This worked! but you hurt him make sure he does not die...
+
+    use
+    one of the options.
+
+'
   numOfPages: 0
-  talkingToSomeone: 0
-  otherPersonSprite: {fileID: 0}
   options:
-  - optionText: so
+  - optionText: Check on him
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
-  - optionText: many
+    healthEffects: 1
+    infoEffects: 0
+  - optionText: Taunt him
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
-  - optionText: options
+    healthEffects: 0
+    infoEffects: 1
+  - optionText: Shock again
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
-  - optionText: 'there '
+    healthEffects: -3
+    infoEffects: 2
+  - optionText: Physical harm again
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
-  - optionText: 'are
+    healthEffects: -2
+    infoEffects: 1
+  - optionText: 'Scare him
 
 '
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
-  pageMusic: {fileID: 0}
+    healthEffects: 0
+    infoEffects: 1

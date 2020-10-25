@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05126190708dca94a9fdced5f8bf705e, type: 3}
   m_Name: Page2Test
   m_EditorClassIdentifier: 
-  ending: 0
-  backgroundImage: {fileID: 0}
-  mainText: SUPER DUPER DIFFERENT other other lorem ipsum stuf stuffy
-  texts: []
+  mainText: "You pulled him into a Bad memory\r\nUse one of the options to affect
+    him.\r"
   numOfPages: 0
-  talkingToSomeone: 0
-  otherPersonSprite: {fileID: 0}
   options:
-  - optionText: there is only one option
+  - optionText: make him suffer!
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
-  pageMusic: {fileID: 0}
+    healthEffects: -2
+    infoEffects: 1
