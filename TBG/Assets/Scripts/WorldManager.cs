@@ -64,8 +64,8 @@ public class WorldManager : MonoBehaviour
     [Header("Character")]
     public GameObject character;
     public Sprite fullLifeSprite;
-    public Sprite mediumLifeSprite;
-    public Sprite criticalLifeSprite;
+    public GameObject mediumLifeSprite;
+    public GameObject criticalLifeSprite;
 
     private int currentTextPage;
     private bool typing;
@@ -78,7 +78,7 @@ public class WorldManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentEnviroment = Environment.Environment1;
+        currentEnviroment = Environment.Environment2;
         gameUIHost.SetActive(false);
         startInfo.SetActive(true);
         failScreen.SetActive(false);
@@ -89,13 +89,15 @@ public class WorldManager : MonoBehaviour
         interrogationInfo.GetComponent<TextMeshProUGUI>().text = startPerson.information;
 
         //start
-        currentPage = startPerson.startPage;
+        currentPage = startPerson.startPage; 
         currentHealth = maxHealth;
         currentInformation = 0;
         healtBar.GetComponent<Image>().fillAmount = 1;
         infoBar.GetComponent<Image>().fillAmount = 0;
         backgroundShader.SetColor("Color_1F8AE3CA", Color.blue); // default background with no blood
-        character.GetComponent<SpriteRenderer>().sprite = fullLifeSprite;
+        mediumLifeSprite.SetActive(false);
+        criticalLifeSprite.SetActive(false);
+        //character.GetComponent<SpriteRenderer>().sprite = fullLifeSprite;
 
 
         //Add img when available
@@ -301,19 +303,22 @@ public class WorldManager : MonoBehaviour
 
     void ChangeCharacter()
     {
-        if(currentHealth<=maxHealth/2)
+        if(currentHealth<=maxHealth/2 && currentHealth> maxHealth / 3)
         {
-            if(mediumLifeSprite!=null)
+            if(mediumLifeSprite!=null && !mediumLifeSprite.activeInHierarchy)
             {
-                character.GetComponent<SpriteRenderer>().sprite = mediumLifeSprite;
+                mediumLifeSprite.SetActive(true);
+                Debug.Log("hafl life");
             }
             
         }
         else if(currentHealth<=maxHealth/3)
         {
-            if(criticalLifeSprite!=null)
+            if(criticalLifeSprite!=null && !criticalLifeSprite.activeInHierarchy)
             {
-                character.GetComponent<SpriteRenderer>().sprite = criticalLifeSprite;
+                criticalLifeSprite.SetActive(true);
+                Debug.Log("critical life");
+              
             }
            
         }
