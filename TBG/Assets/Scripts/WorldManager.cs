@@ -67,6 +67,12 @@ public class WorldManager : MonoBehaviour
     public GameObject mediumLifeSprite;
     public GameObject criticalLifeSprite;
 
+    [Header("Sounds")]
+    public GameObject cameraAudio;
+    public AudioClip enviroment1Sound;
+    public AudioClip enviroment2Sound;
+    public AudioClip enviroment3Sound;
+
     private int currentTextPage;
     private bool typing;
     private string newText;
@@ -186,6 +192,7 @@ public class WorldManager : MonoBehaviour
                 info = requiredInformation;
                 infoBar.GetComponent<Image>().fillAmount = 1;
                 successScreen.SetActive(true);
+                failScreen.SetActive(false);
             }
             else if( info<0)
             {
@@ -356,16 +363,32 @@ public class WorldManager : MonoBehaviour
         {
             case Environment.Environment1:
                 {
+                    if(cameraAudio.GetComponent<AudioSource>().clip != enviroment1Sound)
+                    {
+                        cameraAudio.GetComponent<AudioSource>().clip = enviroment1Sound;
+                        cameraAudio.GetComponent<AudioSource>().Play();
+                    }
+                    
                     backgroundShader.SetColor("Color_1F8AE3CA", Color.magenta);
                     break;
                 }
             case Environment.Environment2:
                 {
+                    if (cameraAudio.GetComponent<AudioSource>().clip != enviroment2Sound)
+                    {
+                        cameraAudio.GetComponent<AudioSource>().clip = enviroment2Sound;
+                        cameraAudio.GetComponent<AudioSource>().Play();
+                    }
                     backgroundShader.SetColor("Color_1F8AE3CA", Color.blue);
                     break;
                 }
             case Environment.Environment3:
                 {
+                    if (cameraAudio.GetComponent<AudioSource>().clip != enviroment3Sound)
+                    {
+                        cameraAudio.GetComponent<AudioSource>().clip = enviroment3Sound;
+                        cameraAudio.GetComponent<AudioSource>().Play();
+                    }
                     backgroundShader.SetColor("Color_1F8AE3CA", Color.red);
                     break;
                 }

@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 63157919276041823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 7020839352162801984}
   m_RootOrder: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
   m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
     Praesent libero. Sed cursus ante dapibus diam. Sed nisi. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a57d20752dc9f9640962f048f9a5b07b, type: 2}
-  m_sharedMaterial: {fileID: -7373415950520298258, guid: a57d20752dc9f9640962f048f9a5b07b,
+  m_fontAsset: {fileID: 11400000, guid: 8c733c4905f92604aaa23da2e8c4d3c7, type: 2}
+  m_sharedMaterial: {fileID: -1739828828761595586, guid: 8c733c4905f92604aaa23da2e8c4d3c7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 9
+  m_fontSizeBase: 9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -188,7 +188,7 @@ RectTransform:
   m_GameObject: {fileID: 8505995848153943848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children:
   - {fileID: 2223323989143256155}
   m_Father: {fileID: 0}
