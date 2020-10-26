@@ -13,4 +13,7 @@ public class PageOption
     [Header("Resources")]
     public int healthEffects;
     public int infoEffects;
+
+    [Header("Animations")]
+    public TriggersAni triggerA;
 }

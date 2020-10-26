@@ -20,3 +20,4 @@ MonoBehaviour:
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
     healthEffects: 0
     infoEffects: 3
+    triggerA: 7

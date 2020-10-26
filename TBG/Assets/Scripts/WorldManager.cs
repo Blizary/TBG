@@ -12,6 +12,19 @@ public enum Environment
     Environment3
 }
 
+
+public enum TriggersAni
+{
+    ELECTRIC,
+    BADMEMORY,
+    HAPPYMEMORY,
+    PHYSICAL,
+    TAUNT,
+    SCARE,
+    DRUG,
+    NONE
+}
+
 public class WorldManager : MonoBehaviour
 {
 
@@ -46,9 +59,13 @@ public class WorldManager : MonoBehaviour
     public float currentHealth;
     public float requiredInformation;
     public float currentInformation;
-
-    [Header("Resources")]
     public Material backgroundShader;
+
+    [Header("Character")]
+    public GameObject character;
+    public Sprite fullLifeSprite;
+    public Sprite mediumLifeSprite;
+    public Sprite criticalLifeSprite;
 
     private int currentTextPage;
     private bool typing;
@@ -78,6 +95,7 @@ public class WorldManager : MonoBehaviour
         healtBar.GetComponent<Image>().fillAmount = 1;
         infoBar.GetComponent<Image>().fillAmount = 0;
         backgroundShader.SetColor("Color_1F8AE3CA", Color.blue); // default background with no blood
+        character.GetComponent<SpriteRenderer>().sprite = fullLifeSprite;
 
 
         //Add img when available
@@ -87,7 +105,7 @@ public class WorldManager : MonoBehaviour
     void Update()
     {
         UpdateEnviroment();
-        ChangeBackground();
+        ChangeCharacter();
     }
 
 
@@ -120,6 +138,7 @@ public class WorldManager : MonoBehaviour
     /// </summary>
     public void UpdatePage(Page _newPage,PageOption _option)
     {
+        character.GetComponent<Animator>().SetTrigger(_option.triggerA.ToString());
         currentPage = _newPage;
         ReadResources(_option);
         ReadPage();
@@ -280,11 +299,23 @@ public class WorldManager : MonoBehaviour
 
 
 
-    void ChangeBackground()
+    void ChangeCharacter()
     {
         if(currentHealth<=maxHealth/2)
         {
-           // backgroundShader.SetColor("Color_1F8AE3CA", Color.magenta);
+            if(mediumLifeSprite!=null)
+            {
+                character.GetComponent<SpriteRenderer>().sprite = mediumLifeSprite;
+            }
+            
+        }
+        else if(currentHealth<=maxHealth/3)
+        {
+            if(criticalLifeSprite!=null)
+            {
+                character.GetComponent<SpriteRenderer>().sprite = criticalLifeSprite;
+            }
+           
         }
     }
 

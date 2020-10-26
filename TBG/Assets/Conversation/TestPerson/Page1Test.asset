@@ -24,21 +24,26 @@ MonoBehaviour:
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
     healthEffects: 2
     infoEffects: 0
+    triggerA: 7
   - optionText: Taunt him
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
     healthEffects: 0
     infoEffects: 2
+    triggerA: 4
   - optionText: Shock again
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
     healthEffects: -3
     infoEffects: 2
+    triggerA: 0
   - optionText: Physical harm again
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
     healthEffects: -1
     infoEffects: 1
+    triggerA: 3
   - optionText: 'Scare him
 
 '
     nextPage: {fileID: 11400000, guid: 02b82877f74ca6342921db9c3b9b9fc9, type: 2}
     healthEffects: 0
     infoEffects: 1
+    triggerA: 5

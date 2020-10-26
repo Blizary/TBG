@@ -19,15 +19,19 @@ MonoBehaviour:
     nextPage: {fileID: 11400000, guid: e366154369bb8fe468b696344fc3cb23, type: 2}
     healthEffects: -2
     infoEffects: 2
+    triggerA: 0
   - optionText: Pulling a happy memory
     nextPage: {fileID: 11400000, guid: 2a37a10c393defe4c897c9105dc128c5, type: 2}
     healthEffects: 2
     infoEffects: 0
+    triggerA: 2
   - optionText: Pulling a bad memory
     nextPage: {fileID: 11400000, guid: 5400b5cbf45ecde4a9f6f0bc7d98db24, type: 2}
     healthEffects: -2
     infoEffects: 1
+    triggerA: 1
   - optionText: Physical Harm
     nextPage: {fileID: 11400000, guid: e366154369bb8fe468b696344fc3cb23, type: 2}
     healthEffects: -1
     infoEffects: 1
+    triggerA: 3
